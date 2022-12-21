@@ -1,4 +1,5 @@
 import React from "react";
+import {Link, NavLink} from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const NavBar = () => {
@@ -7,17 +8,16 @@ return (
         <div className="col-md-8 d-flex justify-content-end align-items-center">
         <nav className="navbar navbar-expand-lg">
   <div className="container-fluid">
-    <a className="navbar-brand" href="/"><img src={"images/wendy-logo.png"} alt={"logo principal"} width= {80} /></a>
+    <Link className="navbar-brand" to="/"><img src={"/images/wendy-logo.png"} alt={"logo principal"} width= {80} /></Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
       <div className="navbar-nav text-white">
-        <a className="nav-link active text-white" aria-current="page" href="menu">MENÚ</a>
-        <a className="nav-link text-white" href="locales">LOCALES</a>
-        <a className="nav-link text-white" href="promociones">PROMOCIONES</a>
-        <a className="nav-link text-white" href="wndys cafe">WENDY'S CAFÉ</a>
-        <a className="nav-link text-white" href="hace tu pedido">HACE TU PEDIDO</a>
+        <NavLink className="nav-link text-white" to={"/category/carne"}>Carne</NavLink>
+        <NavLink className="nav-link text-white" to={"/category/pollo"}>Pollo</NavLink>
+        <NavLink className="nav-link text-white" to={"/category/ensaladas"}>Ensaladas</NavLink>
+        <NavLink className="nav-link text-white" to={"/category/postres"}>Postres</NavLink>
       </div>
     </div>
   </div>
